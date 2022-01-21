@@ -6,6 +6,6 @@ The purpose of this page is to teach the basics of web development. You can find
 Web pages layout will include a header with a top navigation bar, and the main content in sub-pages will incorporate a left bar. Finally, all pages will have a footer. 
 
 Tasks division: 
-Main page: Basil Omsha
-HTML basics: Jenna Nevalainen
-CSS basics: Rasmus Peltoranta
+Main page: Basil Omsha,
+HTML basics: Jenna Nevalainen,
+CSS basics: Rasmus Peltoranta.
