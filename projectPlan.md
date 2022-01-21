@@ -10,3 +10,4 @@ Main page: Basil Omsha,
 HTML basics: Jenna Nevalainen,
 CSS basics: Rasmus Peltoranta, 
 Bootstrap basics: Santeri Passi.
+About Us: Maybe all of us?
