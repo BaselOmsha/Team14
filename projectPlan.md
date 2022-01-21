@@ -8,4 +8,5 @@ Web pages layout will include a header with a top navigation bar, and the main c
 Tasks division: (If you have any other suggestion please shoot a message on discord)
 Main page: Basil Omsha,
 HTML basics: Jenna Nevalainen,
-CSS basics: Rasmus Peltoranta.
+CSS basics: Rasmus Peltoranta, 
+Bootstrap basics: Santeri Passi.
