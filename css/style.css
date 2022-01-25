@@ -12,7 +12,6 @@ a {
 Basil*/
 .navbar {
     background-color: #c4c4c4;
-    
 }
 /* Spaces between items are increased
 in the navbar. Basil*/
@@ -24,6 +23,29 @@ in the navbar. Basil*/
 .nav-item {
     padding-left: 20px;
     padding-right: 60px;
+}
+/* Search bar with rounded corners
+and white & blue background. Basil*/
+.navbar1 {
+    background-color: #0000ff;
+    border-radius: 25px;
+}
+/* Search bar with rounded corners
+and white & blue background. Basil*/
+.btn {
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+}
+/* Search bar with rounded corners
+and white & blue background. Basil*/
+.form-control1 {
+    color: #555555;
+    border: none;
+    border-radius: 25px;
+    padding-left: 20px;
+    width: 299px;
+    margin-left: -20px;
 }
 /*light-blue box config. Basil*/
 .box {
