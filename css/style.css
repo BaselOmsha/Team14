@@ -27,3 +27,9 @@ in the navbar. Basil*/
     justify-content: center; 
     align-items: center;
 }
+/*can be used to add spacing between 
+items stacked on top of each other.
+Basil*/
+.padding{
+    padding-bottom: 2%;
+}
