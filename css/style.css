@@ -1,3 +1,7 @@
+/*body background color.Basil*/
+body {
+    background-color: #2f303a;
+}
 /*navbar bakground color change.
 Basil*/
 .navbar {
@@ -30,6 +34,51 @@ in the navbar. Basil*/
 /*can be used to add spacing between 
 items stacked on top of each other.
 Basil*/
-.padding{
-    padding-bottom: 2%;
+.padding {
+    padding-bottom: 1%;
+}
+/*container. Basil*/
+.container {
+    width: auto;
+    height: auto;
+    position: static;
+    flex-direction:row;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-content: space-around;
+    align-items: center;
+    
+}
+/*white boxes config. Basil*/
+.box1 {
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #1d19f6;
+    width: 358px;
+    height: 293px;
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 10px 10px 5px #494848;
+}
+
+/*white boxe config. Basil*/
+.box2 {
+    background-color: #fdfdfd;
+    border-radius: 30px;
+    width: auto;
+    height: 556px;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
 }
