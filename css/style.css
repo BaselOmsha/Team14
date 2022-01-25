@@ -2,6 +2,12 @@
 body {
     background-color: #2f303a;
 }
+/*Removing underline from hyper
+links. Basil*/
+a {
+    text-decoration: none;
+    color: #1d19f6;
+}
 /*navbar bakground color change.
 Basil*/
 .navbar {
