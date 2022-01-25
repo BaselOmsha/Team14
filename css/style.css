@@ -7,10 +7,11 @@ Basil*/
 /* Spaces between items are increased
 in the navbar. Basil*/
 .navbar-brand {
-    padding-right: 40px;
+    padding-left: 40px;
 }
 /* Spaces between items are increased
 in the navbar. Basil*/
 .nav-item {
-    padding-right: 50px;
+    padding-left: 20px;
+    padding-right: 60px;
 }
