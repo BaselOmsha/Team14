@@ -82,3 +82,20 @@ Basil*/
     justify-content: center; 
     align-items: center;
 }
+/*footer config*/
+.box3 {
+    width: auto;
+    display: flex;
+    background-color: #000000;
+    padding: 15px 15px 15px 15px;
+}
+footer {
+    display: flex;
+    flex-flow: column wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #363636;
+    padding: 15px 15px 15px 15px;
+    color: #ffffff;
+}
