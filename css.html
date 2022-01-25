@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<style>
+  header{
+    text-align: center;
+    font-size: xx-large;
+  }
+  div{
+    flex-direction: row;
+    display: flex;
+    
+  }
+  section{
+    flex-direction: column;
+    display: flex;
+  }
+  .sidebar{
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  font-size: x-large;
+  }
+  .content{
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+  }
+</style>
+<body>
+    
+
+ <div>
+   <section class="sidebar">
+    <ul>
+      <li> <a href="#1">What is CSS?</a></li>
+      <li><a href="#2">What can you do with CSS?</a> </li>
+      <li><a href="#3">CSS examples</a> </li>
+    </ul>
+   </section>
+  <section class="content">
+    <header><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/180px-CSS3_logo_and_wordmark.svg.png" align="center"></header>
+    <h1 id="1">What is CSS?</h1>
+    <article>
+    <p>  Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+
+CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, which reduces complexity and repetition in the structural content; and enable the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+</p> 
+
+</article>
+<p style="font-size: larger;"> Short History:</p>
+<article>
+  CSS was first proposed by Håkon Wium Lie on October 10, 1994. At the time, Lie was working with Tim Berners-Lee at CERN. Several other style sheet languages for the web were proposed around the same time, and discussions on public mailing lists and inside World Wide Web Consortium resulted in the first W3C CSS Recommendation (CSS1)[24] being released in 1996. In particular, a proposal by Bert Bos was influential; he became co-author of CSS1, and is regarded as co-creator of CSS.
+
+Style sheets have existed in one form or another since the beginnings of Standard Generalized Markup Language (SGML) in the 1980s, and CSS was developed to provide style sheets for the web. One requirement for a web style sheet language was for style sheets to come from different sources on the web. Therefore, existing style sheet languages like DSSSL and FOSI were not suitable. CSS, on the other hand, let a document's style be influenced by multiple style sheets by way of "cascading" styles.
+</article>
+<h2 id="2">What can you do with CSS?</h2>
+<article>
+  <article>
+<p>Before CSS, nearly all presentational attributes of HTML documents were contained within the HTML markup. All font colors, background styles, element alignments, borders and sizes had to be explicitly described, often repeatedly, within the HTML. CSS lets authors move much of that information to another file, the style sheet, resulting in considerably simpler HTML.
+
+  For example, headings (h1 elements), sub-headings (h2), sub-sub-headings (h3), etc., are defined structurally using HTML. In print and on the screen, choice of font, size, color and emphasis for these elements is presentational.
+  
+  Before CSS, document authors who wanted to assign such typographic characteristics to, say, all h2 headings had to repeat HTML presentational markup for each occurrence of that heading type. This made documents more complex, larger, and more error-prone and difficult to maintain. CSS allows the separation of presentation from structure. CSS can define color, font, text alignment, size, borders, spacing, layout and many other typographic characteristics, and can do so independently for on-screen and printed views. CSS also defines non-visual styles, such as reading speed and emphasis for aural text readers. The W3C has now deprecated the use of all presentational HTML markup.[15]</p>
+
+</article>
+<h3 id="3">CSS Examples</h3>
+<p style="font-size: larger;"> Inline CSS:</p>
+<article>
+  <xmp><h1 style="color:brown;text-align:left;">Inline CSS</h1> </xmp>
+  <xmp><p style="color:red;">Works well with little detail.</p></xmp>
+</article>
+<p style="font-size: larger;"> Embedded CSS:</p>
+<xmp>
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  body {
+    background-color:blue;
+  }
+  h1 {
+    color: green;
+  }
+  </style>
+  </head>
+  <body>
+  <h1>Embedded CSS</h1>
+  <p>Is better for the whole site.</p>
+  </body>
+  </html>
+</xmp>
+<p style="font-size: larger;"> External CSS:</p>
+<article>
+  <p>External CSS is the best way to use CSS if you want to use it in many sites, you just need to make a CSS folder and link it to the html file.</p>
+<p> Example:</p>
+<xmp><link rel="stylesheet" href="style.css"></xmp>
+</article>
+
+
+</section>
+</div>
+
+    
+    
+</body>
+</html>
