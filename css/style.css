@@ -47,7 +47,7 @@ and white & blue background. Basil*/
     width: 299px;
     margin-left: -20px;
 }
-/*light-blue box config. Basil*/
+/*box config. Basil*/
 .box {
     background-color: #ffffffea;
     width: auto;
@@ -96,21 +96,8 @@ Basil*/
     text-shadow: 2px 2px 4px #000000;
     box-shadow: 10px 10px 5px #494848;
 }
-
-/*white boxe config. Basil*/
-.box2 {
-    background-color: #ffffffea;
-    width: auto;
-    height: 556px;
-    position: relative;
-    flex-direction: column;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: center;
-}
 /*footer config*/
-.box3 {
+.box2 {
     width: auto;
     display: flex;
     background-color: #000000;
