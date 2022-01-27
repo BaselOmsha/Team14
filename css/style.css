@@ -1,44 +1,44 @@
-/*body background color.Basil*/
+/*body background color.*/
 body {
     background-color: #2f303a;
 }
 /*Removing underline from hyper
-links. Basil*/
+links.*/
 a {
     text-decoration: none;
     color: #1d19f6;
 }
 /*navbar bakground color change.
-Basil*/
+*/
 .navbar {
     background-color: #c4c4c4;
 }
 /* Spaces between items are increased
-in the navbar. Basil*/
+in the navbar.*/
 .navbar-brand {
     padding-left: 40px;
 }
 /* Spaces between items are increased
-in the navbar. Basil*/
+in the navbar.*/
 .nav-item {
     padding-left: 80px;
     padding-right: 80px;
 }
 /* Search bar with rounded corners
-and white & blue background. Basil*/
+and white & blue background.*/
 .navbar1 {
     background-color: #0000ff;
     border-radius: 25px;
 }
 /* Search bar with rounded corners
-and white & blue background. Basil*/
+and white & blue background.*/
 .btn {
     color: #ffffff;
     border: none;
     border-radius: 25px;
 }
 /* Search bar with rounded corners
-and white & blue background. Basil*/
+and white & blue background.*/
 .form-control1 {
     color: #555555;
     border: none;
@@ -47,7 +47,7 @@ and white & blue background. Basil*/
     width: 299px;
     margin-left: -20px;
 }
-/*box config. Basil*/
+/*box config.*/
 .box {
     background-color: #ffffffea;
     width: auto;
@@ -60,12 +60,11 @@ and white & blue background. Basil*/
     align-items: center;
 }
 /*can be used to add spacing between 
-items stacked on top of each other.
-Basil*/
+items stacked on top of each other.*/
 .padding {
     padding-bottom: 1%;
 }
-/*container. Basil*/
+/*container.*/
 .container {
     width: auto;
     height: auto;
@@ -78,7 +77,7 @@ Basil*/
     align-items: center;
     
 }
-/*white boxes config. Basil*/
+/*white boxes config.*/
 .box1 {
     border-radius: 30px;
     background-color: #ffffff;
