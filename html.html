@@ -14,71 +14,71 @@
 
 </head>
 <style>
-     .navbar {
-    background-color: #c4c4c4;
-    margin-bottom: none;
-  }
+    .navbar {
+        background-color: #c4c4c4;
+        margin-bottom: none;
+    }
 
-  .navbar-brand {
-    padding-left: 40px;
-  }
+    .navbar-brand {
+        padding-left: 40px;
+    }
 
-  .nav-item {
-    padding-left: 20px;
-    padding-right: 60px;
-  }
+    .nav-item {
+        padding-left: 20px;
+        padding-right: 60px;
+    }
 
-  .navbar1 {
-    background-color: #0000ff;
-    border-radius: 25px;
-  }
+    .navbar1 {
+        background-color: #0000ff;
+        border-radius: 25px;
+    }
 
-  header {
-    text-align: center;
-    font-size: xx-large;
-  }
+    header {
+        text-align: center;
+        font-size: xx-large;
+    }
 
-  body {
-    background-color: grey;
-  }
+    body {
+        background-color: grey;
+    }
 
-  a {
-    color: black;
-  }
+    a {
+        color: black;
+    }
 
 
-  section {
-    flex-direction: column;
-    display: flex;
-  }
+    section {
+        flex-direction: column;
+        display: flex;
+    }
 
-  .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    height: 100%;
-    font-size: x-large;
-    float: left;
-    background-color: grey;
-  }
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        height: 100%;
+        font-size: x-large;
+        float: left;
+        background-color: grey;
+    }
 
-  .content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    color: black;
-    background-color: white
-  }
+    .content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        color: black;
+        background-color: white
+    }
 
-  footer {
-    display: flex;
-    flex-flow: column wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #2f303a;
-    padding: 15px 15px 15px 15px;
-    color: #ffffff;
-  }
+    footer {
+        display: flex;
+        flex-flow: column wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #2f303a;
+        padding: 15px 15px 15px 15px;
+        color: #ffffff;
+    }
 </style>
 
 <body>
@@ -219,88 +219,86 @@
             <xmp style="width: 500px;padding: 5px; border: 2px solid grey;">
                 <img src="img_girl.jpg" alt="Girl with a jacket">
             </xmp>
+        </section>
 
-        </article>
-    </section>
-
-            <footer>
-                <section class="mb-4" id="b">
-                    <!--Section heading-->
-                    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
-                    <!--Section description-->
-                    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate
-                        to
-                        contact us
-                        directly. Our team will come back to you within
-                        a matter of hours to help you.</p>
-                    <div class="row">
-                        <div class="col-md-9 mb-md-0 mb-5">
-                            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            <input type="text" id="name" name="name" class="form-control">
-                                            <label for="name" class="">Your name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            <input type="text" id="email" name="email" class="form-control">
-                                            <label for="email" class="">Your email</label>
-                                        </div>
+        <footer>
+            <section class="mb-4" id="b">
+                <!--Section heading-->
+                <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
+                <!--Section description-->
+                <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate
+                    to
+                    contact us
+                    directly. Our team will come back to you within
+                    a matter of hours to help you.</p>
+                <div class="row">
+                    <div class="col-md-9 mb-md-0 mb-5">
+                        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="name" name="name" class="form-control">
+                                        <label for="name" class="">Your name</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="md-form mb-0">
-                                            <input type="text" id="subject" name="subject" class="form-control">
-                                            <label for="subject" class="">Subject</label>
-                                        </div>
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="email" name="email" class="form-control">
+                                        <label for="email" class="">Your email</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="md-form">
-                                            <textarea type="text" id="message" name="message" rows="2"
-                                                class="form-control md-textarea"></textarea>
-                                            <label for="message">Your message</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                            <div class="text-center text-md-left">
-                                <a class="btn btn-primary"
-                                    onclick="document.getElementById('contact-form').submit();">Send</a>
                             </div>
-                            <div class="status"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="subject" name="subject" class="form-control">
+                                        <label for="subject" class="">Subject</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="message" name="message" rows="2"
+                                            class="form-control md-textarea"></textarea>
+                                        <label for="message">Your message</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="text-center text-md-left">
+                            <a class="btn btn-primary"
+                                onclick="document.getElementById('contact-form').submit();">Send</a>
                         </div>
-                        <div class="col-md-3 text-center">
-                            <ul class="list-unstyled mb-0">
-                                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                                    <p>Visamäentie 35 A, 13100 Hämeenlinna</p>
-                                </li>
-                                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                                    <p>(+358) 23456 789</p>
-                                </li>
-                                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                                    <p>email@email.com</p>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="status"></div>
                     </div>
-                </section>
-                <div class="container">
-                    <footer class="py-3 my-4">
-                        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                            <li class="nav-item"><a class="nav-link px-2 text-muted">Facebook</a></li>
-                            <li class="nav-item"><a class="nav-link px-2 text-muted">Instagram</a></li>
-                            <li class="nav-item"><a class="nav-link px-2 text-muted">LinkedIn</a></li>
-                            <li class="nav-item"><a class="nav-link px-2 text-muted">Discord</a></li>
+                    <div class="col-md-3 text-center">
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                                <p>Visamäentie 35 A, 13100 Hämeenlinna</p>
+                            </li>
+                            <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                                <p>(+358) 23456 789</p>
+                            </li>
+                            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                                <p>email@email.com</p>
+                            </li>
                         </ul>
-                        <p class="text-center text-muted">&copy; 2022 HAMK, Team 14</p>
-                    </footer>
+                    </div>
                 </div>
-            </footer>
-    </body>
+            </section>
+            <div class="container">
+                <footer class="py-3 my-4">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><a class="nav-link px-2 text-muted">Facebook</a></li>
+                        <li class="nav-item"><a class="nav-link px-2 text-muted">Instagram</a></li>
+                        <li class="nav-item"><a class="nav-link px-2 text-muted">LinkedIn</a></li>
+                        <li class="nav-item"><a class="nav-link px-2 text-muted">Discord</a></li>
+                    </ul>
+                    <p class="text-center text-muted">&copy; 2022 HAMK, Team 14</p>
+                </footer>
+            </div>
+        </footer>
+</body>
 </html>
