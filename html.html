@@ -79,6 +79,14 @@
         padding: 15px 15px 15px 15px;
         color: #ffffff;
     }
+    
+    /*keeps text within the defined container. Basil*/
+    xmp{
+        white-space: pre-wrap;
+        border: 2px solid grey;
+        padding: 5px;
+    }
+
 </style>
 
 <body>
@@ -163,7 +171,7 @@
 
             <p> The HTML element is everything from the start tag to the end tag:</p>
 
-            <xmp style="width: 500px;padding: 5px; border: 2px solid grey;">
+            <xmp>
                 <tagname>Content goes here...</tagname>
                 Examples of some HTML elements:
 
@@ -176,7 +184,7 @@
                 HTML elements can be nested (this means that elements can contain other elements).
                 All HTML documents consist of nested HTML elements.
                 The following example contains four HTML elements:
-                <xmp style="width: 500px;padding: 5px; border: 2px solid grey;">
+                <xmp>
                     <!DOCTYPE html>
                     <html>
 
@@ -201,14 +209,14 @@
 
             <p>The img tag is used to embed an image in an HTML page. The src attribute specifies the path to the image
                 to be displayed:</p>
-            <xmp style="width: 500px;padding: 5px; border: 2px solid grey;">
+            <xmp>
                 <img src="img_girl.jpg">
             </xmp>
 
             <p>The <img> tag should also contain the width and height attributes,
                 which specifies the width and height of the image (in pixels):</p>
 
-            <xmp style="width: 500px;padding: 5px; border: 2px solid grey;">
+            <xmp>
                 <img src="img_girl.jpg" width="500" height="600">
             </xmp>
 
@@ -216,7 +224,7 @@
                 if the image for some reason cannot be displayed.
                 This can be due to slow connection, or an error in the src attribute, or if the user uses
                 a screen reader.</p>
-            <xmp style="width: 500px;padding: 5px; border: 2px solid grey;">
+            <xmp>
                 <img src="img_girl.jpg" alt="Girl with a jacket">
             </xmp>
         </section>
