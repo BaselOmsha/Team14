@@ -24,6 +24,14 @@ in the navbar.*/
     padding-left: 80px;
     padding-right: 80px;
 }
+/**/
+.nav-link:hover {
+    background-color: #eeea14;
+    border-radius: 25px;    
+}
+a:hover {
+    color: #00ff6a;
+}
 /* Search bar with rounded corners
 and white & blue background.*/
 .navbar1 {
@@ -95,13 +103,13 @@ items stacked on top of each other.*/
     text-shadow: 2px 2px 4px #000000;
     box-shadow: 10px 10px 5px #494848;
 }
-/*footer config*/
 .box2 {
     width: auto;
     display: flex;
     background-color: #000000;
     padding: 15px 15px 15px 15px;
 }
+/*footer config*/
 footer {
     display: flex;
     flex-flow: column wrap;
