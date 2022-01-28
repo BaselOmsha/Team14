@@ -13,11 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css"><!--Link to local css file.-->
 
-</head>
 <style>
     .navbar {
         background-color: #c4c4c4;
-        margin-bottom: none;
     }
 
     .navbar-brand {
@@ -89,13 +87,13 @@
     }
 
 </style>
-
+</head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"
-                style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 48;"><b>CodeSchool</b></a>
+                style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 20px;"><b>CodeSchool</b></a>
             <div id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -120,7 +118,7 @@
         </div>
     </nav>
 
-    <div>
+    
         <section class="sidebar">
             <ul>
                 <li> <a href="#1">What is JavaScript?</a></li>
@@ -130,7 +128,7 @@
         </section>
         <section class="content">
             <header><img src="https://tianahorn.com/images/javascript.png"
-                    align="center" height="200"></header>
+                   alt="JavaScript" height="200"></header>
             <h1 id="1">What is JavaScript?</h1>
             <article>
                 <p>
@@ -163,7 +161,7 @@
             </article>
 
             <h3 id="3">JavaScript Examples</h3>
-            <p style="font-size: larger;"> <b> JavaScript Can Change HTML Content:</p></b>
+            <p style="font-size: larger;"> <b> JavaScript Can Change HTML Content:</b></p>
 
             <p>One of many JavaScript HTML methods is getElementById().</p>
             <p>The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":</p>
@@ -172,7 +170,7 @@
                 document.getElementById("demo").innerHTML = "Hello JavaScript";
             </xmp>
 
-            <p style="font-size: larger;"> <b> JavaScript Can Change HTML Styles (CSS):</p></b>
+            <p style="font-size: larger;"> <b> JavaScript Can Change HTML Styles (CSS):</b></p>
             <p>Changing the style of an HTML element, is a variant of changing an HTML attribute:</p>
                 <xmp>
                     document.getElementById("demo").style.fontSize = "35px";
@@ -233,7 +231,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <textarea type="text" id="message" name="message" rows="2"
+                                        <textarea  id="message" name="message" rows="2"
                                             class="form-control md-textarea"></textarea>
                                         <label for="message">Your message</label>
                                     </div>
@@ -263,7 +261,7 @@
                 </div>
             </section>
             <div class="container">
-                <footer class="py-3 my-4">
+                <div class="py-3 my-4">
                     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                         <li class="nav-item"><a class="nav-link px-2 text-muted">Facebook</a></li>
                         <li class="nav-item"><a class="nav-link px-2 text-muted">Instagram</a></li>
@@ -271,7 +269,7 @@
                         <li class="nav-item"><a class="nav-link px-2 text-muted">Discord</a></li>
                     </ul>
                     <p class="text-center text-muted">&copy; 2022 HAMK, Team 14</p>
-                </footer>
+                </div>
             </div>
         </footer>
 </body>

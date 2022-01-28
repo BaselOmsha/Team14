@@ -13,11 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css"><!--Link to local css file.-->
 
-</head>
+
 <style>
     .navbar {
         background-color: #c4c4c4;
-        margin-bottom: none;
     }
 
     .navbar-brand {
@@ -89,13 +88,13 @@
     }
 
 </style>
-
+</head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"
-                style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 48;"><b>CodeSchool</b></a>
+                style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 20px;"><b>CodeSchool</b></a>
             <div id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -120,7 +119,7 @@
         </div>
     </nav>
 
-    <div>
+    
         <section class="sidebar">
             <ul>
                 <li> <a href="#1">What is HTML?</a></li>
@@ -130,7 +129,7 @@
         </section>
         <section class="content">
             <header><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png"
-                    align="center" height="250" width="250"></header>
+                   alt="HTML5"  height="250" width="250"></header>
             <h1 id="1">What is HTML?</h1>
             <article>
                 <p> HTML (stands for Hypertext Markup Language) is a computer language that makes up most web pages and
@@ -143,7 +142,7 @@
 
             <h2 id="2">What can you do with HTML?</h2>
             <article>
-                <p>
+                
                 <ul>
                     <li>Web pages development - HTML is used to create pages which are rendered over the web. Almost
                         every page of web is having html tags in it to render its details in browser.</li>
@@ -159,12 +158,12 @@
 
                     <li> Game development- HTML5 has native support for rich experience and is now useful in gaming
                         developent arena as well.</li>
-                    </p>
                 </ul>
+                
             </article>
 
             <h3 id="3">HTML Examples</h3>
-            <p style="font-size: larger;"> <b> HTML Elements:</p></b>
+            <p style="font-size: larger;"> <b> HTML Elements:</b></p>
 
             <p> The HTML element is everything from the start tag to the end tag:</p>
 
@@ -176,7 +175,7 @@
                 <p>My first paragraph.</p>
             </xmp>
 
-            <p style="font-size: larger;"> <b> Nested HTML Elements:</p></b>
+            <p style="font-size: larger;"> <b> Nested HTML Elements:</b></p>
             <p>
                 HTML elements can be nested (this means that elements can contain other elements).
                 All HTML documents consist of nested HTML elements.
@@ -210,14 +209,14 @@
                 <img src="img_girl.jpg">
             </xmp>
 
-            <p>The <img> tag should also contain the width and height attributes,
+            <p>The img tag should also contain the width and height attributes,
                 which specifies the width and height of the image (in pixels):</p>
 
             <xmp>
                 <img src="img_girl.jpg" width="500" height="600">
             </xmp>
 
-            <p>The required alt attribute for the <img> tag specifies an alternate text for an image,
+            <p>The required alt attribute for the img tag specifies an alternate text for an image,
                 if the image for some reason cannot be displayed.
                 This can be due to slow connection, or an error in the src attribute, or if the user uses
                 a screen reader.</p>
@@ -264,7 +263,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <textarea type="text" id="message" name="message" rows="2"
+                                        <textarea  id="message" name="message" rows="2"
                                             class="form-control md-textarea"></textarea>
                                         <label for="message">Your message</label>
                                     </div>
@@ -294,7 +293,7 @@
                 </div>
             </section>
             <div class="container">
-                <footer class="py-3 my-4">
+                <div class="py-3 my-4">
                     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                         <li class="nav-item"><a class="nav-link px-2 text-muted">Facebook</a></li>
                         <li class="nav-item"><a class="nav-link px-2 text-muted">Instagram</a></li>
@@ -302,7 +301,7 @@
                         <li class="nav-item"><a class="nav-link px-2 text-muted">Discord</a></li>
                     </ul>
                     <p class="text-center text-muted">&copy; 2022 HAMK, Team 14</p>
-                </footer>
+                </div>
             </div>
         </footer>
 </body>

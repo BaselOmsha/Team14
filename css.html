@@ -13,11 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css"><!--Link to local css file.-->
 
-</head>
+
 <style>
   .navbar {
     background-color: #c4c4c4;
-    margin-bottom: none;
   }
 
   .navbar-brand {
@@ -87,13 +86,13 @@
 
   
 </style>
-
+</head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html"
-        style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 48;"><b>CodeSchool</b></a>
+        style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 20px;"><b>CodeSchool</b></a>
       <div id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -129,7 +128,7 @@
   <section class="content">
     <header><img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/180px-CSS3_logo_and_wordmark.svg.png"
-        align="center"></header>
+        alt="CSS"></header>
     <h1 id="1">What is CSS?</h1>
     <article>
       <p> Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document
@@ -159,7 +158,6 @@
       multiple style sheets by way of "cascading" styles.
     </article>
     <h2 id="2">What can you do with CSS?</h2>
-    <article>
       <article>
         <p>Before CSS, nearly all presentational attributes of HTML documents were contained within the HTML markup. All
           font colors, background styles, element alignments, borders and sizes had to be explicitly described, often
@@ -181,14 +179,14 @@
       </article>
       <h3 id="3">CSS Examples</h3>
       <p style="font-size: larger;"> Inline CSS:</p>
-      <article>
+      
         <xmp>
           <h1 style="color:brown;text-align:left;">Inline CSS</h1>
         </xmp>
         <xmp>
           <p style="color:red;">Works well with little detail.</p>
         </xmp>
-      </article>
+      
       <p style="font-size: larger;"> Embedded CSS:</p>
       <xmp>
         <!DOCTYPE html>
@@ -218,97 +216,91 @@
         <p>External CSS is the best way to use CSS if you want to use it in many sites, you just need to make a CSS
           folder and link it to the html file.</p>
         <p> Example:</p>
+        </article>
         <xmp>
           <link rel="stylesheet" href="style.css">
         </xmp>
-      </article>
-
-
   </section>
   <!--ends Rasmus-->
 
   <footer>
     <section class="mb-4" id="b">
-      <!--Section heading-->
-      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
-      <!--Section description-->
-      <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
-        contact us
-        directly. Our team will come back to you within
-        a matter of hours to help you.</p>
-      <div class="row">
-        <div class="col-md-9 mb-md-0 mb-5">
-          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="md-form mb-0">
-                  <input type="text" id="name" name="name" class="form-control">
-                  <label for="name" class="">Your name</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="md-form mb-0">
-                  <input type="text" id="email" name="email" class="form-control">
-                  <label for="email" class="">Your email</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="md-form mb-0">
-                  <input type="text" id="subject" name="subject" class="form-control">
-                  <label for="subject" class="">Subject</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="md-form">
-                  <textarea type="text" id="message" name="message" rows="2"
-                    class="form-control md-textarea"></textarea>
-                  <label for="message">Your message</label>
-                </div>
-              </div>
-            </div>
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate
+            to
+            contact us
+            directly. Our team will come back to you within
+            a matter of hours to help you.</p>
+        <div class="row">
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="name" name="name" class="form-control">
+                                <label for="name" class="">Your name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="email" name="email" class="form-control">
+                                <label for="email" class="">Your email</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <input type="text" id="subject" name="subject" class="form-control">
+                                <label for="subject" class="">Subject</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <textarea  id="message" name="message" rows="2"
+                                    class="form-control md-textarea"></textarea>
+                                <label for="message">Your message</label>
+                            </div>
+                        </div>
+                    </div>
 
-          </form>
-          <div class="text-center text-md-left">
-            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-          </div>
-          <div class="status"></div>
+                </form>
+                <div class="text-center text-md-left">
+                    <a class="btn btn-primary"
+                        onclick="document.getElementById('contact-form').submit();">Send</a>
+                </div>
+                <div class="status"></div>
+            </div>
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                        <p>Visamäentie 35 A, 13100 Hämeenlinna</p>
+                    </li>
+                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                        <p>(+358) 23456 789</p>
+                    </li>
+                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                        <p>email@email.com</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-3 text-center">
-          <ul class="list-unstyled mb-0">
-            <li><i class="fas fa-map-marker-alt fa-2x"></i>
-              <p>Visamäentie 35 A, 13100 Hämeenlinna</p>
-            </li>
-            <li><i class="fas fa-phone mt-4 fa-2x"></i>
-              <p>(+358) 23456 789</p>
-            </li>
-            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-              <p>email@email.com</p>
-            </li>
-          </ul>
-        </div>
-      </div>
     </section>
     <div class="container">
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a class="nav-link px-2 text-muted">Facebook</a></li>
-          <li class="nav-item"><a class="nav-link px-2 text-muted">Instagram</a></li>
-          <li class="nav-item"><a class="nav-link px-2 text-muted">LinkedIn</a></li>
-          <li class="nav-item"><a class="nav-link px-2 text-muted">Discord</a></li>
-        </ul>
-        <p class="text-center text-muted">&copy; 2022 HAMK, Team 14</p>
-      </footer>
+        <div class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a class="nav-link px-2 text-muted">Facebook</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-muted">Instagram</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-muted">LinkedIn</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-muted">Discord</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2022 HAMK, Team 14</p>
+        </div>
     </div>
-  </footer>
-
-
-
-
-
+</footer>
 </body>
-
 </html>
