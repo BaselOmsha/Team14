@@ -180,46 +180,54 @@
       <h3 id="3">CSS Examples</h3>
       <p style="font-size: larger;"> Inline CSS:</p>
       
-        <xmp>
-          <h1 style="color:brown;text-align:left;">Inline CSS</h1>
-        </xmp>
-        <xmp>
-          <p style="color:red;">Works well with little detail.</p>
-        </xmp>
+      <pre>
+        <code>
+          &lt;h1 style=&quot;color:brown;text-align:left;&quot;&gt;Inline CSS&lt;/h1&gt;
+        </code>
+      </pre>
+      <pre>
+        <code>
+          &lt;p style=&quot;color:red;&quot;&gt;Works well with little detail.&lt;/p&gt;
+        </code>
+      </pre>
       
       <p style="font-size: larger;"> Embedded CSS:</p>
-      <xmp>
-        <!DOCTYPE html>
-        <html>
+      <pre>
+        <code>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
 
-        <head>
-          <style>
-            body {
-              background-color: blue;
-            }
+          &lt;head&gt;
+            &lt;style&gt;
+              body {
+                background-color: blue;
+              }
 
-            h1 {
-              color: green;
-            }
-          </style>
-        </head>
+              h1 {
+                color: green;
+              }
+            &lt;/style&gt;
+          &lt;/head&gt;
 
-        <body>
-          <h1>Embedded CSS</h1>
-          <p>Is better for the whole site.</p>
-        </body>
+          &lt;body&gt;
+            &lt;h1&gt;Embedded CSS&lt;/h1&gt;
+            &lt;p&gt;Is better for the whole site.&lt;/p&gt;
+          &lt;/body&gt;
 
-        </html>
-      </xmp>
+          &lt;/html&gt;
+        </code>
+      </pre>
       <p style="font-size: larger;"> External CSS:</p>
       <article>
         <p>External CSS is the best way to use CSS if you want to use it in many sites, you just need to make a CSS
           folder and link it to the html file.</p>
         <p> Example:</p>
         </article>
-        <xmp>
-          <link rel="stylesheet" href="style.css">
-        </xmp>
+        <pre>
+          <code>
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+          </code>
+        </pre>
   </section>
   <!--ends Rasmus-->
 
