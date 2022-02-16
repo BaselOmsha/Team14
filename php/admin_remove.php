@@ -26,7 +26,7 @@
     mysqli_close($connection);
     header("Refresh:3; url=./admin.php");
     include "../html/admin_header.html";
-    echo "<div class='sec'>";
+    echo "<div class='sec' style='color: red'>";
     echo "<h1>The profile selected is being deleted...</h1><br>";
     echo "<br>";
     echo "<h1>Please wait!</h1>";
