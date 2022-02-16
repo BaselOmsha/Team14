@@ -6,7 +6,7 @@ body {
 links.*/
 a {
     text-decoration: none;
-    color: #1d19f6;
+    color: #ff7a18;
 }
 /*navbar bakground color change.
 */
@@ -82,8 +82,35 @@ items stacked on top of each other.*/
     flex-wrap: wrap; 
     justify-content: space-between; 
     align-content: space-around;
+    align-items: center;  
+}
+.sec {
+    background-color: #ffffffea;
+    width: auto;
+    height: 556px;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
     align-items: center;
-    
+    background-color: #2f303a;
+    color: #ffffff;
+    text-decoration: none;
+}
+.sec1 {
+	padding-top: 1%;
+    background-color: #ffffffea;
+    width: auto;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+    background-color: #2f303a;
+    color: #ffffff;
 }
 /*white boxes config.*/
 .box1 {
@@ -100,14 +127,32 @@ items stacked on top of each other.*/
     align-items: center;
     margin-top: 20%;
     margin-bottom: 20%;
-    text-shadow: 2px 2px 4px #000000;
-    box-shadow: 10px 10px 5px #494848;
+    text-shadow: 2px 2px 4px 
+    #000000;
+    box-shadow: 10px 10px 5px 
+    #494848;
 }
 .box2 {
     width: auto;
     display: flex;
     background-color: #000000;
     padding: 15px 15px 15px 15px;
+}
+table {
+	text-align:center;
+  	font-family: arial, sans-serif;
+  	border-collapse: collapse;
+  	width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: blue;
 }
 /*footer config*/
 footer {
