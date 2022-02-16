@@ -13,13 +13,13 @@ a {
 .navbar {
     background-color: #c4c4c4;
 }
-/* Spaces between items are increased
-in the navbar.*/
+/* Spaces between items are 
+increased in the navbar.*/
 .navbar-brand {
     padding-left: 40px;
 }
-/* Spaces between items are increased
-in the navbar.*/
+/* Spaces between items 
+are increased in the navbar.*/
 .nav-item {
     padding-left: 80px;
     padding-right: 80px;
@@ -67,10 +67,22 @@ and white & blue background.*/
     justify-content: center; 
     align-items: center;
 }
-/*can be used to add spacing between 
-items stacked on top of each other.*/
+/*can be used to add spacing 
+between items stacked on 
+top of each other.*/
 .padding {
     padding-bottom: 1%;
+}
+.block {
+    background-color: #2f303a;
+    width: auto;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
 }
 /*container.*/
 .container {
@@ -85,18 +97,19 @@ items stacked on top of each other.*/
     align-items: center;  
 }
 .sec {
-    background-color: #ffffffea;
+	margin-bottom: 2%;
     width: auto;
-    height: 556px;
+    height: auto;
     position: relative;
     flex-direction: column;
     display: flex;
     flex-wrap: wrap; 
-    justify-content: center; 
+    justify-content: top; 
     align-items: center;
-    background-color: #2f303a;
+    background-color: #000000;
     color: #ffffff;
     text-decoration: none;
+    overflow: scroll;
 }
 .sec1 {
 	padding-top: 1%;
@@ -139,7 +152,6 @@ items stacked on top of each other.*/
     padding: 15px 15px 15px 15px;
 }
 table {
-	text-align:center;
   	font-family: arial, sans-serif;
   	border-collapse: collapse;
   	width: 100%;
@@ -149,6 +161,7 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  text-align:center;
 }
 
 tr:nth-child(even) {
