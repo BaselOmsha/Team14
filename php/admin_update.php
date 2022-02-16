@@ -1,33 +1,52 @@
 <?php
+    $initials=parse_ini_file("../.ht.asetukset.ini");
     mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
     //Luetaan lomakkeelta tulleet tiedot funktiolla $_POST
     //jos syötteet ovat olemassa
     $id=isset($_POST["id"]) ? $_POST["id"] : "";
-    $nimi=isset($_POST["nimi"]) ? $_POST["nimi"] : "";
-    $sivulkm=isset($_POST["sivulkm"]) ? $_POST["sivulkm"] : 0;
+    $fname=isset($_POST["fname"]) ? $_POST["fname"] : "";
+    $lname=isset($_POST["lname"]) ? $_POST["lname"] : "";
+    $email=isset($_POST["email"]) ? $_POST["email"] : "";
+    $paswd=isset($_POST["paswd"]) ? $_POST["paswd"] : "";
+    $descrip=isset($_POST["descrip"]) ? $_POST["descrip"] : "";
+    $uname=isset($_POST["uname"]) ? $_POST["uname"] : 0;
     //Jos ei jompaa kumpaa tai kumpaakaan tietoa ole annettu
     //ohjataan pyyntö takaisin lomakkeelle
-    if (empty($id) || empty($nimi) || empty($sivulkm)){
-        header("Location:../html/tietuettaeiloydy.html");
+    if (empty($id) || empty($fname) || empty($lname)
+        || empty($paswd) || empty($uname)
+        ){
+        header("Location:../html/noData.html");
         exit;
     }
-    try{
-        $connection=mysqli_connect("db", "root", "password", "kirjakanta");
-    }
-    catch(Exception $e){
-        header("Location:../html/yhteysvirhe.html");
+    try {
+        $connection=mysqli_connect($initials["databaseserver"],
+            $initials["username"],
+            $initials["password"],
+            $initials["database"]
+            );
+    } catch (Exception $e) {
+        header("Location:../html/connectionError.html");
         exit;
     }
     //Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
     //joihin laitetaan muuttujien arvoja
-    $sql="update kirja set nimi=?, sivulkm=? where id=?";
+    $sql="update users set fname=?, lname=?,  email=?, 
+            paswd=?, descrip=?, uname=? where id=?";
     //Valmistellaan sql-lause
     $stmt=mysqli_prepare($connection, $sql);
     //Sijoitetaan muuttujat oikeisiin paikkoihin
-    mysqli_stmt_bind_param($stmt, 'sii', $nimi, $sivulkm, $id);
+    mysqli_stmt_bind_param($stmt, 'ssssssi', $fname, $lname, 
+        $email, $paswd, $descrip, $uname, $id);
     //Suoritetaan sql-lause
     mysqli_stmt_execute($stmt);
     //Suljetaan tietokantayhteys
     mysqli_close($connection);
-    header("Location:./listakirja.php");
+    header("Refresh:3; url=./admin.php");
+    include "../html/admin_header.html";
+    echo "<div class='sec'>";
+    echo "<h1>The profile selected is being updated...</h1><br>";
+    echo "<br>";
+    echo "<h1>Please wait!</h1>";
+    echo "</div>";
+    include "../html/admin_footer.html";
 ?>
