@@ -20,27 +20,32 @@ text-align: center;
 </style>
 <script>
 function lahetaKayttaja(lomake){
-	var user=new Object();
-	user.user=lomake.uname.value;
-	user.paswd=lomake.paswd.value;
-	var jsonUser=JSON.stringify(user);
-	
-	xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200) {
-		    if (this.responseText=="ok"){
-		    	window.location.assign("../html/index.html");
-		    }
-		    else{
-			    document.getElementById("result").innerHTML = this.responseText;
-		    }
-	  }
-	};
-	xmlhttp.open("POST", "../php/login.php", true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("user=" + jsonUser);	
-}
+                var user=new Object();
+                user.uname=lomake.uname.value;
+                user.paswd=lomake.paswd.value;
+                var jsonUser=JSON.stringify(user);
+
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                         document.getElementById("result").innerHTML = 
+                         this.responseText;
+                       if (this.responseText=="Error"){
+                            document.getElementById("result").innerHTML = 
+                            "Username or/and password are wrong";
+                       }
+                       else{
+                            window.location.assign("../php/welcome.php");
+                       }
+                  }
+                };
+                xmlhttp.open("POST", "../php/login.php", true);
+                xmlhttp.setRequestHeader("Content-type", 
+                "application/x-www-form-urlencoded");
+                xmlhttp.send("user=" + jsonUser);
+            } 
 </script>
+
 </head>
 <body>
 
