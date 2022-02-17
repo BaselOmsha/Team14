@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"><!--Link to local css file.-->
+<style>
+h2 {
+text-align: center;
+font-size: xx-large;
+}
+form {
+text-align: center;
+font-size: x-large;
+}
+p {
+text-align: center;
+}
+
+</style>
+<script>
+function lahetaKayttaja(lomake){
+	var user=new Object();
+	user.user=lomake.uname.value;
+	user.paswd=lomake.paswd.value;
+	var jsonUser=JSON.stringify(user);
+	
+	xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+		    if (this.responseText=="ok"){
+		    	window.location.assign("../html/index.html");
+		    }
+		    else{
+			    document.getElementById("result").innerHTML = this.responseText;
+		    }
+	  }
+	};
+	xmlhttp.open("POST", "../php/login.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("user=" + jsonUser);	
+}
+</script>
+</head>
+<body>
+
+<header>
+        <!--navigation bar starts here.-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 20px;"><b>CodeSchool</b></a>
+        </nav>
+    </header>
+    <!--navigation bar ends here.-->
+
+<h2>Login!</h2>
+<form id='userlomake'>
+Username: <input type='text' name='uname' value='' placeholder='Username...'><br>
+Password: <input type='text' name='paswd' value='' placeholder='Password...'><br>
+<input type='button' name='ok' value='Login' onclick='lahetaKayttaja(this.form);'><br>
+</form>
+<p id='result'>
+Please fill both!
+</p>
+<p> <a class="nav-link active" href="./rekisterointi.html">Sign up!</a> </p>
+
+</body>
+</html>
