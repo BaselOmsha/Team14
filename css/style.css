@@ -8,6 +8,10 @@ a {
     text-decoration: none;
     color: #ff7a18;
 }
+form .input {
+	min-width: 500px;
+	width: 600px;
+}
 /*navbar bakground color change.
 */
 .navbar {
@@ -117,12 +121,12 @@ top of each other.*/
     width: auto;
     height: auto;
     position: relative;
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
     align-items: center;
-    background-color: #2f303a;
+    background-color: #000000;
     color: #ffffff;
 }
 /*white boxes config.*/
