@@ -8,9 +8,20 @@ a {
     text-decoration: none;
     color: #ff7a18;
 }
+.cnt{
+	width:auto;
+	flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; 
+	justify-content: center; 
+    align-items: center;
+    
+}
 form .input {
 	min-width: 500px;
 	width: 600px;
+	justify-content: center; 
+    align-items: center;
 }
 /*navbar bakground color change.
 */

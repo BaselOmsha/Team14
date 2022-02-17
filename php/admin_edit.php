@@ -43,18 +43,21 @@
 	<h3>Password:</h3>
 		<input class='input' type='password' name='paswd' value='<?php print $row->paswd;?>'
 		placeholder='Create a strong password' id="myInput"><br>
+	<div class='cnt'>	
 	<p>
 		Show Password<input type="checkbox" onclick="myFunction()">
-	</p>
+	</p></div>
 	<h3>Description:</h3>
 		<input class='input' type='text' name='descrip' value='<?php print $row->descrip;?>'
 		placeholder='Description'><br> <br> 
-	<input style='font-size: 20px; background-color: #ff7a18; width: 100px'
-		type='submit' name='submit' value='Update'>
-	<input style='font-size: 20px; background-color: #ff7a18; width: 100px'
-		type='reset' name='reset' value='Reset'><br> <br>
-	<input style='font-size: 20px; background-color: #ff7a18; width: 100px'
+	<div class='cnt'>	
+	<input style='font-size: 20px; border-radius: 25px; background-color: #ff7a18; width: 100px'
+		type='submit' name='submit' value='Update'><br>
+	<input style='font-size: 20px; border-radius: 25px; background-color: #ff7a18; width: 100px'
+		type='reset' name='reset' value='Reset'><br>
+	<input style='font-size: 20px; border-radius: 25px; background-color: #ff7a18; width: 100px'
 		type='button' name='cancel' value='Cancel' onclick='window.history.back()';><br><br>
+	</div>	
 </form>
 <?php
     mysqli_close($connection);
