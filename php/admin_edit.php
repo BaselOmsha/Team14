@@ -2,6 +2,7 @@
     $initials = parse_ini_file("../.ht.asetukset.ini");
     mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
     $editable = isset($_GET["editable"]) ? $_GET["editable"] : 0;
+    $editable = isset($_GET["editable"]) ? $_GET["editable"] : 0;
     if (empty($editable)) {
         header("Location:./admin.php");
         exit();
