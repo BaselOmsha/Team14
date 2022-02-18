@@ -1,5 +1,31 @@
 <?php
 session_start();
+$_SESSION["id"] = "2";
+$initials=parse_ini_file("../.ht.asetukset.ini");
+
+$id=$_SESSION["id"];
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+try{
+    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
+}
+catch(Exception $e){
+    header("Location:../html/connectionError.html");
+    exit;
+}
+
+$query=mysqli_query($yhteys, "select * from users where id='$id'");
+while ($row = mysqli_fetch_assoc($query)){
+    $firstname=$row['fname'];
+}
+$query=mysqli_query($yhteys, "select * from users where id='$id'");
+while ($row = mysqli_fetch_assoc($query)){
+    $lastname=$row['lname'];
+}
+$query=mysqli_query($yhteys, "select * from users where id='$id'");
+while ($row = mysqli_fetch_assoc($query)){;
+    $email=$row['email'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,13 +55,30 @@ session_start();
           x.style.display = "none";
         }
       }
+      
+      function lahetaKayttaja(lomake){
+		var user=new Object();
+		user.tunnus=lomake.tunnus.value;
+		user.salasana=lomake.salasana.value;
+		var jsonUser=JSON.stringify(user);
+	
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+	  		if (this.readyState == 4 && this.status == 200) {
+		    	document.getElementById("result").innerHTML = this.responseText;
+	  		}
+		};
+		xmlhttp.open("POST", "../php/rekisteroidyajax.php", true);
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.send("user=" + jsonUser);	
+		}
     </script>
 </head>
 
 <body>
 
 <?php 
-#$_SESSION["fname"] = "testi";
+$_SESSION["fname"] = "testi";
 #echo "Session variables are set.";
 ?>
 
@@ -73,12 +116,13 @@ session_start();
           <form>
             <label for="fname">First name</label><br>
 <?php
-if($_SESSION['fname'])
-  echo ' <input type="text" id="fname" name="fname" value="'.$_SESSION['fname'].'"></input><br>'; ?>
+echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
             <label for="lname">Last name</label><br>
-            <input type="text" id="lname" name="lname"><br>
+<?php
+echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input><br>'; ?>
             <label for="email">Email</label><br>
-            <input type="text" id="email" name="email"><br>
+<?php
+echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
             <label for="paswd">Password</label><br>
             <input type="password" id="paswd" name="paswd"><br>
             <input type="submit" value="Submit" class="save-changes">
