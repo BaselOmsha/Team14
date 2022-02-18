@@ -23,15 +23,21 @@ try {
     mysqli_stmt_execute($stmt);
     $print=mysqli_stmt_get_result($stmt);
     if ($row=mysqli_fetch_object($print)){
-        $_SESSION["admin"]="$row->uname- $row->fname $row->lname";
+        $_SESSION["admin"]="$row->uname";
         print $_SESSION["returnSite"];
         exit;
     }
     mysqli_close($connection);
     print "Login in...";
 } catch (Exception $e) {
-    print
-    "Error!";
+   header("Refresh:2.5; url=admin_login.php");
+         include "../html/admin_header.html";
+         echo "<div class='sec' style='color: red'>";
+         echo "<h1>'Wrong username and/or password</h1><br>";
+         echo "<br>";
+         echo "<h1>Taking you back. Please wait...</h1>";
+         echo "</div>";
+         include "../html/admin_footer.html";
 }
 ?>
 <?php
