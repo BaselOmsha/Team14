@@ -9,14 +9,18 @@ if (!($user=tarkistaJson($json))){
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
-
-try{
-    $yhteys=mysqli_connect("db", "root", "password", "codeschool");
-}
-catch(Exception $e){
-    print "Error";
-    exit;
-}
+    $initials=parse_ini_file("../.ht.asetukset.ini");
+    try {
+        $yhteys=mysqli_connect($initials["databaseserver"],
+            $initials["username"],
+            $initials["password"],
+            $initials["database"]
+            );
+        
+    } catch (Exception $e) {
+        header("Location:../html/connectionError.html");
+        exit;
+    }
 
 
 $sql="select * from users where uname=? and paswd=SHA2(?, 256)";
