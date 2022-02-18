@@ -1,11 +1,10 @@
 <?php 
 
-
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 $json=isset($_POST["user"]) ? $_POST["user"] : "";
 
 if (!($user=tarkistaJson($json))){
-    print "Täytä kaikki kentät";
+    print "Please complete all required fields.";
     exit; 
     
 }
@@ -29,10 +28,10 @@ try{
     mysqli_stmt_bind_param($stmt, 'sssss', $user->fname, $user->lname, $user->email, $user->paswd,$user->uname);
     mysqli_stmt_execute($stmt);
     mysqli_close($yhteys);
-    print "Rekisteröinti onnistui";
+    print "Thanks for signing up.";
 }
 catch(Exception $e){
-    print "Tunnus jo olemassa tai muu virhe!";
+    print "Something went wrong. ";
 }
 ?>
 
