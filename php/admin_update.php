@@ -27,7 +27,8 @@
     } catch (Exception $e) {
         header("Location:../html/connectionError.html");
         exit;
-    }
+    }      
+    try {
     //Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
     //joihin laitetaan muuttujien arvoja
     $sql="update users set fname=?, lname=?,  email=?, 
@@ -41,7 +42,7 @@
     mysqli_stmt_execute($stmt);
     //Suljetaan tietokantayhteys
     mysqli_close($connection);
-    header("Refresh:3; url=./admin.php");
+    header("Refresh:3.5; url=./admin.php");
     include "../html/admin_header.html";
     echo "<div class='sec' style='color: green'>";
     echo "<h1>The profile selected is being updated...</h1><br>";
@@ -49,4 +50,15 @@
     echo "<h1>Please wait!</h1>";
     echo "</div>";
     include "../html/admin_footer.html";
+     } catch (Exception $e) {
+         header("Refresh:3.5; url=./admin.php");
+         include "../html/admin_header.html";
+         echo "<div class='sec' style='color: red'>";
+         echo "<h1>'$uname' Username is already in use!</h1><br>";
+         echo "<br>";
+         echo "<h1>Taking you back. Please wait...</h1>";
+         echo "</div>";
+         include "../html/admin_footer.html";
+         
+     }
 ?>

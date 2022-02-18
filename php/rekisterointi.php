@@ -16,6 +16,7 @@ try {
                                $initials["password"],
                                $initials["database"]
                                 );
+    
 } catch (Exception $e) {
     header("Location:../html/connectionError.html");
     exit;
@@ -29,10 +30,13 @@ try{
     mysqli_stmt_execute($stmt);
     mysqli_close($yhteys);
     print "Thanks for signing up.";
+    
+    
 }
 catch(Exception $e){
-    print "Something went wrong. ";
+    print "Username is already taken.";
 }
+
 ?>
 
 
