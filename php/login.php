@@ -20,7 +20,8 @@ try {
 } catch (Exception $e) {
     header("Location:../html/connectionError.html");
     exit;
-
+}
+{
 
 $sql="select * from users where uname=? and paswd=SHA2(?, 256)";
 }

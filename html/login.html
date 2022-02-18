@@ -19,7 +19,7 @@ text-align: center;
 
 </style>
 <script>
-function lahetaKayttaja(lomake){
+function lahetaUsers(lomake){
                 var user=new Object();
                 user.uname=lomake.uname.value;
                 user.paswd=lomake.paswd.value;
@@ -62,7 +62,7 @@ function lahetaKayttaja(lomake){
 <form id='userlomake'>
 Username: <input type='text' name='uname' value='' placeholder='Username...'><br>
 Password: <input type='text' name='paswd' value='' placeholder='Password...'><br>
-<input type='button' name='ok' value='Login' onclick='lahetaKayttaja(this.form);'><br>
+<input type='button' name='ok' value='Login' onclick='lahetaUsers(this.form);'><br>
 </form>
 <p id='result'>
 Please fill both!
