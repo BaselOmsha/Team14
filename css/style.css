@@ -8,6 +8,21 @@ a {
     text-decoration: none;
     color: #ff7a18;
 }
+.cnt{
+	width:auto;
+	flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; 
+	justify-content: center; 
+    align-items: center;
+    
+}
+form .input {
+	min-width: 500px;
+	width: 600px;
+	justify-content: center; 
+    align-items: center;
+}
 /*navbar bakground color change.
 */
 .navbar {
@@ -109,21 +124,24 @@ top of each other.*/
     background-color: #000000;
     color: #ffffff;
     text-decoration: none;
-    overflow: scroll;
+    overflow: hidden;
 }
+
 .sec1 {
-	padding-top: 1%;
-    background-color: #ffffffea;
+	padding-top: 2%;
     width: auto;
     height: auto;
     position: relative;
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
     align-items: center;
-    background-color: #2f303a;
+    background-color: #000000;
     color: #ffffff;
+    text-decoration: none;
+    overflow: scroll;
+   	
 }
 /*white boxes config.*/
 .box1 {
@@ -180,7 +198,7 @@ tr:nth-child(even) {
 #edit-overlay {
     position: fixed; /* Sit on top of the page content */
     width: 280px; /* Full width (cover the whole page) */
-    height: 450px; /* Full height (cover the whole page) */
+    height: 350px; /* Full height (cover the whole page) */
     margin: auto;
     top: 0;
     left: 0;

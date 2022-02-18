@@ -1,5 +1,25 @@
 <?php
 session_start();
+$initials=parse_ini_file("../.ht.asetukset.ini");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+try{
+    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
+}
+catch(Exception $e){
+    header("Location:../html/connectionError.html");
+    exit;
+}
+
+#$_SESSION["user"] = "tester";
+$user=$_SESSION["user"];
+
+
+
+$query=mysqli_query($yhteys, "select * from users where uname='$user'");
+$row = mysqli_fetch_object($query);
+$firstname="$row->fname";
+$lastname="$row->lname";
+$email="$row->email";
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +49,27 @@ session_start();
           x.style.display = "none";
         }
       }
+      
+      function lahetaKayttaja(lomake){
+		var user=new Object();
+		user.tunnus=lomake.tunnus.value;
+		user.salasana=lomake.salasana.value;
+		var jsonUser=JSON.stringify(user);
+	
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+	  		if (this.readyState == 4 && this.status == 200) {
+		    	document.getElementById("result").innerHTML = this.responseText;
+	  		}
+		};
+		xmlhttp.open("POST", "../php/rekisteroidyajax.php", true);
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.send("user=" + jsonUser);	
+		}
     </script>
 </head>
 
 <body>
-
-<?php 
-#$_SESSION["fname"] = "testi";
-#echo "Session variables are set.";
-?>
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -70,18 +102,17 @@ session_start();
     <div class="container">
       <div id="edit-overlay" style="display: none;">
         <div class="edit-form">
-          <form>
+          <form action="edit_profile.php" method="post">
             <label for="fname">First name</label><br>
 <?php
-if($_SESSION['fname'])
-  echo ' <input type="text" id="fname" name="fname" value="'.$_SESSION['fname'].'"></input><br>'; ?>
+echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
             <label for="lname">Last name</label><br>
-            <input type="text" id="lname" name="lname"><br>
+<?php
+echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input><br>'; ?>
             <label for="email">Email</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="paswd">Password</label><br>
-            <input type="password" id="paswd" name="paswd"><br>
-            <input type="submit" value="Submit" class="save-changes">
+<?php
+echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
+            <input type="submit" value="Submit" class="save-changes" name="edit">
           </form>
       </div>
       </div>
@@ -90,8 +121,8 @@ if($_SESSION['fname'])
                 <div class="profile-picture">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuaFuoGlCQ3paaCuG1flqnTSTuJevd85-qaQ&usqp=CAU" alt="Profile Picture">
                 </div>
-                <p>*Nimi*</p>
-                <p>*E-Mail*</p>
+                <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
+                <?php echo '<p>'.$email.'<p>'?>
                 <button onclick="toggleOverlay()">Edit Profile</button>
             </div>
             <div class="profile-right">

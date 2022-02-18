@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION["admin"])){
+    $_SESSION["returnSite"]="/php/admin.php";
+    header("Location:../html/admin_login.html");
+    exit;
+}
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 $initials=parse_ini_file("../.ht.asetukset.ini");
 try {
@@ -14,6 +19,8 @@ try {
 }
 ?>
 <?php
+    print "<h2 style='font-size:35px'>Welcome, ".$_SESSION["admin"]."!</h2>";
+    print "<a style='font-size:30px' href='admin_logout.php'>Log out</a>";
     include "../html/admin_header.html";
 ?>
 
