@@ -1,10 +1,6 @@
 <?php
 session_start();
-$_SESSION["id"] = "2";
 $initials=parse_ini_file("../.ht.asetukset.ini");
-
-$id=$_SESSION["id"];
-
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
@@ -14,18 +10,16 @@ catch(Exception $e){
     exit;
 }
 
-$query=mysqli_query($yhteys, "select * from users where id='$id'");
-while ($row = mysqli_fetch_assoc($query)){
-    $firstname=$row['fname'];
-}
-$query=mysqli_query($yhteys, "select * from users where id='$id'");
-while ($row = mysqli_fetch_assoc($query)){
-    $lastname=$row['lname'];
-}
-$query=mysqli_query($yhteys, "select * from users where id='$id'");
-while ($row = mysqli_fetch_assoc($query)){;
-    $email=$row['email'];
-}
+#$_SESSION["user"] = "tester";
+$user=$_SESSION["user"];
+
+
+
+$query=mysqli_query($yhteys, "select * from users where uname='$user'");
+$row = mysqli_fetch_object($query);
+$firstname="$row->fname";
+$lastname="$row->lname";
+$email="$row->email";
 ?>
 
 <!DOCTYPE html>
@@ -77,11 +71,6 @@ while ($row = mysqli_fetch_assoc($query)){;
 
 <body>
 
-<?php 
-$_SESSION["fname"] = "testi";
-#echo "Session variables are set.";
-?>
-
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html"
@@ -113,7 +102,7 @@ $_SESSION["fname"] = "testi";
     <div class="container">
       <div id="edit-overlay" style="display: none;">
         <div class="edit-form">
-          <form>
+          <form action="edit_profile.php" method="post">
             <label for="fname">First name</label><br>
 <?php
 echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
@@ -123,9 +112,7 @@ echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input>
             <label for="email">Email</label><br>
 <?php
 echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
-            <label for="paswd">Password</label><br>
-            <input type="password" id="paswd" name="paswd"><br>
-            <input type="submit" value="Submit" class="save-changes">
+            <input type="submit" value="Submit" class="save-changes" name="edit">
           </form>
       </div>
       </div>
@@ -134,8 +121,8 @@ echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br
                 <div class="profile-picture">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuaFuoGlCQ3paaCuG1flqnTSTuJevd85-qaQ&usqp=CAU" alt="Profile Picture">
                 </div>
-                <p>*Nimi*</p>
-                <p>*E-Mail*</p>
+                <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
+                <?php echo '<p>'.$email.'<p>'?>
                 <button onclick="toggleOverlay()">Edit Profile</button>
             </div>
             <div class="profile-right">
