@@ -63,11 +63,11 @@ try {
 						</li>
 						<li class="nav-item">
 							<!--anchor link added.--> <a class="nav-link active"
-							href="../php/admin_logout.php">Logout / <?php print "Welcome, " . $_SESSION["admin"] . "!";?>
-                            </a>
+							href="../php/admin_logout.php">Log out</a>
 						</li>
+
 					</ul>
-				</div>
+				</div><?php print "Welcome, " . $_SESSION["admin"] . "!";?>
 			</div>
 		</nav>
 	</header>
