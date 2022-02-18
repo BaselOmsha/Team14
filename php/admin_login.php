@@ -6,7 +6,6 @@ if (!($admin = checkJson($json))) {
     exit();
 }
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-
 try {
     $initials = parse_ini_file("../.ht.asetukset.ini");
     $connection = mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
@@ -16,7 +15,6 @@ try {
 }
 // Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
 // joihin laitetaan muuttujien arvoja
-
 $sql = "select * from admin where uname=? and paswd=SHA2(?, 256)";
 try {
     $stmt = mysqli_prepare($connection, $sql);

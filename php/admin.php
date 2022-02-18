@@ -54,7 +54,7 @@ try {
 						<li class="nav-item"><a class="nav-link active"
 							href="../html/js.html">JavaScript</a></li>
 						<li class="nav-item">
-							<!--anchor link added.--> <a class="nav-link active" href="#a">About
+							<!--anchor link added.--> <a class="nav-link active" href="../html/index.html#a">About
 								Us</a>
 						</li>
 						<li class="nav-item">
@@ -67,7 +67,7 @@ try {
 						</li>
 
 					</ul>
-				</div><?php print "Welcome, " . $_SESSION["admin"] . "!";?>
+				</div><div><b><?php print "Welcome, " . $_SESSION["admin"] . "!";?></b></div> 
 			</div>
 		</nav>
 	</header>
@@ -84,6 +84,7 @@ try {
 					database</b>
 			</h1>
 			<br>
+			<button onclick="toggleOverlay()"><a href="#"><b>Edit Your Profile Here</b></a></button>
 		</div>
 		<!--box with search bar ends here.-->
 		<!--other content.-->
