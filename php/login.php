@@ -1,5 +1,4 @@
 <?php 
-
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 $json=isset($_POST["user"]) ? $_POST["user"] : "";
 

@@ -35,7 +35,7 @@ function lahetaUsers(lomake){
                             "Username or/and password are wrong";
                        }
                        else{
-                            window.location.assign("../php/welcome.php");
+                            window.location.assign("../php/profile.php");
                        }
                   }
                 };
@@ -45,7 +45,6 @@ function lahetaUsers(lomake){
                 xmlhttp.send("user=" + jsonUser);
             } 
 </script>
-
 </head>
 <body>
 
@@ -63,6 +62,7 @@ function lahetaUsers(lomake){
 Username: <input type='text' name='uname' value='' placeholder='Username...'><br>
 Password: <input type='text' name='paswd' value='' placeholder='Password...'><br>
 <input type='button' name='ok' value='Login' onclick='lahetaUsers(this.form);'><br>
+
 </form>
 <p id='result'>
 Please fill both!
