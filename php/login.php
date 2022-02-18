@@ -1,29 +1,29 @@
 <?php 
-session_start();
+
+mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 $json=isset($_POST["user"]) ? $_POST["user"] : "";
 
 if (!($user=tarkistaJson($json))){
-    print "Fill all forms";
+    print "Fill all fields.";
     exit;
+    
 }
 
-mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-
-    $initials=parse_ini_file("../.ht.asetukset.ini");
-    try {
-        $yhteys=mysqli_connect($initials["databaseserver"],
-            $initials["username"],
-            $initials["password"],
-            $initials["database"]
-            );
-        
-    } catch (Exception $e) {
-        header("Location:../html/connectionError.html");
-        exit;
-    }
+session_start();
+ $initials=parse_ini_file("../.ht.asetukset.ini");
+try {
+    $yhteys=mysqli_connect($initials["databaseserver"],
+        $initials["username"],
+        $initials["password"],
+        $initials["database"]
+        );
+} catch (Exception $e) {
+    header("Location:../html/connectionError.html");
+    exit;
 
 
 $sql="select * from users where uname=? and paswd=SHA2(?, 256)";
+}
 try{
     $stmt=mysqli_prepare($yhteys, $sql);
     mysqli_stmt_bind_param($stmt, 'ss', $user->uname, $user->paswd);
