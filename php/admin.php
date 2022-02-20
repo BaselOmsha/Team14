@@ -84,7 +84,6 @@ try {
 					database</b>
 			</h1>
 			<br>
-			<button onclick="toggleOverlay()"><a href="#"><b>Edit Your Profile Here</b></a></button>
 		</div>
 		<!--box with search bar ends here.-->
 		<!--other content.-->
