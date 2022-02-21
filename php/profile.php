@@ -19,11 +19,13 @@ $user=$_SESSION["user"];
 
 
 
+
 $query=mysqli_query($yhteys, "select * from users where uname='$user'");
 $row = mysqli_fetch_object($query);
 $firstname="$row->fname";
 $lastname="$row->lname";
 $email="$row->email";
+$picpath="$row->profpic";
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +79,7 @@ $email="$row->email";
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="../html/index.html"
             style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 20px;"><b>CodeSchool</b></a>
           <div id="navbarNav">
             <ul class="navbar-nav">
@@ -106,7 +108,7 @@ $email="$row->email";
     <div class="container">
       <div id="edit-overlay" style="display: none;">
         <div class="edit-form">
-          <form action="edit_profile.php" method="post">
+       <form method="POST" action="edit_profile.php"">
             <label for="fname">First name</label><br>
 <?php
 echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
@@ -122,11 +124,22 @@ echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br
       </div>
         <div class="profile-content">
             <div class="profile-left">
+            <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
                 <div class="profile-picture">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuaFuoGlCQ3paaCuG1flqnTSTuJevd85-qaQ&usqp=CAU" alt="Profile Picture">
+                    <?php 
+                    if(empty($picpath)) {
+                        echo '<img src="../profilepics/default.png" alt="Profile Picture">';
+                    } else {
+                        echo '<img src="'.$picpath.'" alt="Profile Picture">';
+                    }
+                    ?>
                 </div>
-                <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
-                <?php echo '<p>'.$email.'<p>'?>
+                <div class="uploadimg">
+                	<form method="POST" action="upload.php" enctype="multipart/form-data">
+                	<input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+                	<input type="submit" value="Upload Image" name="submit"><br><br>
+                	</form>
+                </div>
                 <button onclick="toggleOverlay()">Edit Profile</button>
             </div>
             <div class="profile-right">
