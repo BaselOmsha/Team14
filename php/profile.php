@@ -2,6 +2,11 @@
 session_start();
 $initials=parse_ini_file("../.ht.asetukset.ini");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+#$_SESSION["user"] = "tester";
+if(isset($_SESSION["user"])) {
+} else {
+  header("Location:../html/connectionError.html");
+}
 try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
 }
@@ -10,7 +15,6 @@ catch(Exception $e){
     exit;
 }
 
-#$_SESSION["user"] = "tester";
 $user=$_SESSION["user"];
 
 
@@ -112,7 +116,7 @@ echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input>
             <label for="email">Email</label><br>
 <?php
 echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
-            <input type="submit" value="Submit" class="save-changes" name="edit">
+            <input type="submit" value="Submit" class="edit" name="edit">
           </form>
       </div>
       </div>
