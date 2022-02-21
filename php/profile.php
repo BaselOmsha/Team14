@@ -84,21 +84,21 @@ $picpath="$row->profpic";
           <div id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./html.html">HTML Basics</a>
+                <a class="nav-link active" aria-current="page" href="../html/html.html">HTML Basics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="./css.html">CSS Basics</a>
+                <a class="nav-link active" href="../html/css.html">CSS Basics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="./js.html">JavaScript</a>
-              </li>
-              <li class="nav-item">
-                <!--anchor link added.-->
-                <a class="nav-link active" href="./index.html#a">About Us</a>
+                <a class="nav-link active" href="../html/js.html">JavaScript</a>
               </li>
               <li class="nav-item">
                 <!--anchor link added.-->
-                <a class="nav-link active" href="#b">Contact Us</a>
+                <a class="nav-link active" href="../html/index.html#a">About Us</a>
+              </li>
+              <li class="nav-item">
+                <!--anchor link added.-->
+                <a class="nav-link active" href="../html/index.html#b">Contact Us</a>
               </li>
             </ul>
           </div>
