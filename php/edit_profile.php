@@ -13,27 +13,20 @@ catch(Exception $e){
 
 if(isset($_POST['edit']))
 {
-   $id=$_SESSION['id'];
+   $user=$_SESSION['user'];
    $fname=$_POST['fname'];
    $lname=$_POST['lname'];
    $email=$_POST['email'];
-   $select= "select * from users where id='$id'";
+   $select= "select * from users where uname='$user'";
    $sql = mysqli_query($yhteys,$select);
    $row = mysqli_fetch_assoc($sql);
-   $res= $row['id'];
-   if($res === $id)
+   $res= $row['uname'];
+   if($res === $user)
    {
    
-      $update = "update users set fname='$fname',lname='$lname',email='$email' where id='$id'";
+      $update = "update users set fname='$fname',lname='$lname',email='$email' where uname='$user'";
       $sql2=mysqli_query($yhteys,$update);
-if($sql2)
-      { 
-          header('location:profile.php');
-      }
-      else
-      {
-          header('location:profile.php');
-      }
+      header('location:profile.php');
    }
    else
    {

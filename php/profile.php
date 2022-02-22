@@ -2,6 +2,11 @@
 session_start();
 $initials=parse_ini_file("../.ht.asetukset.ini");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+#$_SESSION["user"] = "tester";
+if(isset($_SESSION["user"])) {
+} else {
+  header("Location:../html/connectionError.html");
+}
 try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
 }
@@ -10,8 +15,8 @@ catch(Exception $e){
     exit;
 }
 
-#$_SESSION["user"] = "tester";
 $user=$_SESSION["user"];
+
 
 
 
@@ -20,6 +25,7 @@ $row = mysqli_fetch_object($query);
 $firstname="$row->fname";
 $lastname="$row->lname";
 $email="$row->email";
+$picpath="$row->profpic";
 ?>
 
 <!DOCTYPE html>
@@ -73,26 +79,26 @@ $email="$row->email";
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="../html/index.html"
             style="color: #0000ff; font-family:'Dosis', sans-serif; font-size: 20px;"><b>CodeSchool</b></a>
           <div id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./html.html">HTML Basics</a>
+                <a class="nav-link active" aria-current="page" href="../html/html.html">HTML Basics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="./css.html">CSS Basics</a>
+                <a class="nav-link active" href="../html/css.html">CSS Basics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="./js.html">JavaScript</a>
-              </li>
-              <li class="nav-item">
-                <!--anchor link added.-->
-                <a class="nav-link active" href="./index.html#a">About Us</a>
+                <a class="nav-link active" href="../html/js.html">JavaScript</a>
               </li>
               <li class="nav-item">
                 <!--anchor link added.-->
-                <a class="nav-link active" href="#b">Contact Us</a>
+                <a class="nav-link active" href="../html/index.html#a">About Us</a>
+              </li>
+              <li class="nav-item">
+                <!--anchor link added.-->
+                <a class="nav-link active" href="../html/index.html#b">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -102,7 +108,7 @@ $email="$row->email";
     <div class="container">
       <div id="edit-overlay" style="display: none;">
         <div class="edit-form">
-          <form action="edit_profile.php" method="post">
+       <form method="POST" action="edit_profile.php"">
             <label for="fname">First name</label><br>
 <?php
 echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
@@ -112,17 +118,28 @@ echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input>
             <label for="email">Email</label><br>
 <?php
 echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
-            <input type="submit" value="Submit" class="save-changes" name="edit">
+            <input type="submit" value="Submit" class="edit" name="edit">
           </form>
       </div>
       </div>
         <div class="profile-content">
             <div class="profile-left">
+            <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
                 <div class="profile-picture">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuaFuoGlCQ3paaCuG1flqnTSTuJevd85-qaQ&usqp=CAU" alt="Profile Picture">
+                    <?php 
+                    if(empty($picpath)) {
+                        echo '<img src="../profilepics/default.png" alt="Profile Picture">';
+                    } else {
+                        echo '<img src="'.$picpath.'" alt="Profile Picture">';
+                    }
+                    ?>
                 </div>
-                <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
-                <?php echo '<p>'.$email.'<p>'?>
+                <div class="uploadimg">
+                	<form method="POST" action="upload.php" enctype="multipart/form-data">
+                	<input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+                	<input type="submit" value="Upload Image" name="submit"><br><br>
+                	</form>
+                </div>
                 <button onclick="toggleOverlay()">Edit Profile</button>
             </div>
             <div class="profile-right">
