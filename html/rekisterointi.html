@@ -96,6 +96,9 @@ body {
 </style></header>
 
 <script>
+
+//Luodaan lomakkeen tiedoista Javascript-olio, joka lähetetään Ajaxilla php-ohjelmalle rekisterointi.php
+
 function lahetaUsers(lomake){
 	var user=new Object();
 	user.fname=lomake.fname.value;
@@ -147,7 +150,7 @@ function lahetaUsers(lomake){
 * Password: <input type='password' name='paswd' value=''
                         placeholder='Password' id="myInput"><br>
 
-<p>Show Password<input type="checkbox"  onclick="myFunction()"></p>
+<p>Show password<input type="checkbox"  onclick="myFunction()"></p>
 
   
 <input type='button' name='ok' value='Sign Up' onclick='lahetaUsers(this.form);'><br></form>
@@ -157,5 +160,8 @@ function lahetaUsers(lomake){
 <p id='result'>
 Already have an account? Log in <a href="login.html">here.</a>
 </p>
+
+<footer> <a href="https://hameenamk-my.sharepoint.com/:w:/g/personal/jenna21008_student_hamk_fi/EaU_Gc3kwMtLnlbM5ppFLmQBeiYDFN8Kpet9FOIwzsYesw?e=GSX7dG">Word-dokumentti projektista</a>
+</footer>
 </body>
 </html>
