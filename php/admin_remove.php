@@ -17,11 +17,8 @@
         exit;
     }
     $sql="delete from users where id=?";
-    //Valmistellaan sql-lause
     $stmt=mysqli_prepare($connection, $sql);
-    //Sijoitetaan muuttujat oikeisiin paikkoihin
     mysqli_stmt_bind_param($stmt, 'i', $deletable);
-    //Suoritetaan sql-lause
     mysqli_stmt_execute($stmt);
     mysqli_close($connection);
     header("Refresh:3; url=./admin.php");

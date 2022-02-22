@@ -1,8 +1,7 @@
 <?php
 $initials = parse_ini_file("../.ht.asetukset.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-// Luetaan lomakkeelta tulleet tiedot funktiolla $_POST
-// jos syötteet ovat olemassa
+// collect data from the form with $_POST
 $id = isset($_POST["id"]) ? $_POST["id"] : "";
 $fname = isset($_POST["fname"]) ? $_POST["fname"] : "";
 $lname = isset($_POST["lname"]) ? $_POST["lname"] : "";
@@ -10,8 +9,7 @@ $email = isset($_POST["email"]) ? $_POST["email"] : "";
 $paswd = isset($_POST["paswd"]) ? $_POST["paswd"] : "";
 $descrip = isset($_POST["descrip"]) ? $_POST["descrip"] : "";
 $uname = isset($_POST["uname"]) ? $_POST["uname"] : 0;
-// Jos ei jompaa kumpaa tai kumpaakaan tietoa ole annettu
-// ohjataan pyyntö takaisin lomakkeelle
+// if one of the mandatory data is empty go to noData page
 if (empty($id) || empty($fname) || empty($lname) || empty($paswd) || empty($uname)) {
     header("Location:../html/noData.html");
     exit();
@@ -23,17 +21,16 @@ try {
     exit();
 }
 try {
-    // Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
-    // joihin laitetaan muuttujien arvoja
+    // sql phrase to update the data base
     $sql = "update users set fname=?, lname=?,  email=?, 
             paswd=?, descrip=?, uname=? where id=?";
-    // Valmistellaan sql-lause
+    // getting the sql ohrase ready
     $stmt = mysqli_prepare($connection, $sql);
-    // Sijoitetaan muuttujat oikeisiin paikkoihin
+    // assign the variables to their right place 
     mysqli_stmt_bind_param($stmt, 'ssssssi', $fname, $lname, $email, $paswd, $descrip, $uname, $id);
-    // Suoritetaan sql-lause
+    // execute the sql phrase above
     mysqli_stmt_execute($stmt);
-    // Suljetaan tietokantayhteys
+    // closing the connection
     mysqli_close($connection);
     header("Refresh:3.5; url=./admin.php");
     include "../html/admin_header.html";

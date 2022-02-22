@@ -1,8 +1,7 @@
 <?php
 $initials = parse_ini_file("../.ht.asetukset.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-$editable = isset($_GET["editable"]) ? $_GET["editable"] : 0;
-$editable = isset($_GET["editable"]) ? $_GET["editable"] : 0;
+$editable = isset($_GET["editable"]) ? $_GET["editable"] : 0; // with editable varaible we get data from the form
 if (empty($editable)) {
     header("Location:./admin.php");
     exit();
@@ -24,6 +23,7 @@ if (! $row = mysqli_fetch_object($result)) {
 }
 include "../html/admin_header.html";
 ?>
+<!-- HTML edit form -->
 <form method='post' action='./admin_update.php'>
 	<h3>ID:</h3>
 	<input class='input' type='text' name='id'
@@ -55,7 +55,7 @@ include "../html/admin_header.html";
 	<div class='cnt'>
 		<input
 			style='font-size: 20px; border-radius: 25px; background-color: #ff7a18; width: 100px'
-			type='submit' name='submit' value='Update'><br> <input
+			type='submit' name='submit' value='Update'><br> <!-- runs the admin_update.php --><input
 			style='font-size: 20px; border-radius: 25px; background-color: #ff7a18; width: 100px'
 			type='reset' name='reset' value='Reset'><br> <input
 			style='font-size: 20px; border-radius: 25px; background-color: #ff7a18; width: 100px'

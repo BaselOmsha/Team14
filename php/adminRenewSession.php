@@ -1,5 +1,6 @@
 <?php
 session_start();
+// if session is not set go to the admin login page
 if (! isset($_SESSION["admin"])) {
     $_SESSION["returnSite"] = "/php/adminRenewSession.php";
     header("Location:../html/admin_login.html");

@@ -1,14 +1,17 @@
 <?php
+// new session to save users' info on the server
 session_start();
-if (! isset($_SESSION["admin"])) {
+if (!isset($_SESSION["admin"])) { // if session is not set, go to the admin login page
     $_SESSION["returnSite"] = "/php/admin.php";
     header("Location:../html/admin_login.html");
     exit();
 }
+// connecting to the database
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 $initials = parse_ini_file("../.ht.asetukset.ini");
 try {
     $connection = mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
+    // if connection doesn't work load error page
 } catch (Exception $e) {
     header("Location:../html/connectionError.html");
     exit();
@@ -67,6 +70,7 @@ try {
 						</li>
 
 					</ul>
+				<!-- showing the new session user's username -->
 				</div><div><b><?php print "Welcome, " . $_SESSION["admin"] . "!";?></b></div> 
 			</div>
 		</nav>
@@ -110,7 +114,7 @@ echo "<th><h2>Description</h2></th>";
 echo "<th><h2>Delete</h2></th>";
 echo "<th><h2>Edit</h2></th>";
 echo "</tr>";
-while ($row = mysqli_fetch_object($print)) {
+while ($row = mysqli_fetch_object($print)) { // loop rows in table as long as there are data in the database and print them into the table with mysqli fetch object
     echo "<tr>";
     echo "<td><h3>$row->id</h3></td>";
     echo "<td><h3>$row->fname</h3></td>";
@@ -120,9 +124,9 @@ while ($row = mysqli_fetch_object($print)) {
     echo "<td><h3>$row->paswd</h3></td>";
     echo "<td><h3>$row->descrip</h3></td>";
     echo "<td><h3><a href='./admin_remove.php?deletable=
-            $row->id'>Delete</a></h3></td>";
+            $row->id'>Delete</a></h3></td>"; //runs the admin_remove.php page
     echo "<td><h3><a href='./admin_edit.php?editable=
-            $row->id'>Edit</a></h3></td>";
+            $row->id'>Edit</a></h3></td>";//runs the admin_edit.php page
     echo "</tr>";
 }
 echo "</table>";
