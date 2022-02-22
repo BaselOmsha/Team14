@@ -2,7 +2,6 @@
 session_start();
 $initials=parse_ini_file("../.ht.asetukset.ini");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-#$_SESSION["user"] = "tester";
 if(isset($_SESSION["user"])) {
 } else {
   header("Location:../html/connectionError.html");
@@ -19,7 +18,7 @@ $user=$_SESSION["user"];
 
 
 
-
+//Get values needed to display current user's information on the profile page
 $query=mysqli_query($yhteys, "select * from users where uname='$user'");
 $row = mysqli_fetch_object($query);
 $firstname="$row->fname";
@@ -108,23 +107,27 @@ $picpath="$row->profpic";
     <div class="container">
       <div id="edit-overlay" style="display: none;">
         <div class="edit-form">
+        
+        <!-- Use php to show user information in the form -->
        <form method="POST" action="edit_profile.php"">
             <label for="fname">First name</label><br>
-<?php
-echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
+			<?php
+            echo ' <input type="text" id="fname" name="fname" value="'.$firstname.'"></input><br>'; ?>
             <label for="lname">Last name</label><br>
-<?php
-echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input><br>'; ?>
+			<?php
+            echo ' <input type="text" id="lname" name="lname" value="'.$lastname.'"></input><br>'; ?>
             <label for="email">Email</label><br>
-<?php
-echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
+			<?php
+            echo ' <input type="text" id="email" name="email" value="'.$email.'"></input><br>'; ?>
             <input type="submit" value="Submit" class="edit" name="edit">
           </form>
       </div>
       </div>
+      
+      <!-- Also use php to show user information and current profile picture on the profile -->
         <div class="profile-content">
             <div class="profile-left">
-            <?php echo '<p>'.$firstname.' '.$lastname.'<p>'?>
+            <?php echo '<p style="font-size:24px">'.$firstname.' '.$lastname.'<p>'?>
                 <div class="profile-picture">
                     <?php 
                     if(empty($picpath)) {
