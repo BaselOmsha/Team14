@@ -39,7 +39,7 @@ try{
     print $json;
 }
 catch(Exception $e){
-    print "Some error!";
+    print "Error";
 }
 ?>
 
