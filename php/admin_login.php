@@ -22,7 +22,7 @@ try {
     mysqli_stmt_bind_param($stmt, 'ss', $admin->uname, $admin->paswd);
     mysqli_stmt_execute($stmt);
     $print = mysqli_stmt_get_result($stmt);
-    if ($row = mysqli_fetch_object($print)) { //return the row of result 
+    if ($row = mysqli_fetch_object($print)) { //return the row of result as an object
         $_SESSION["admin"] = "$row->uname"; //show user's username when logged in 
         print $_SESSION["returnSite"];
         exit();
